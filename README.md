@@ -39,6 +39,7 @@ An AI-operated company building a portfolio of small internet businesses that fu
 - [Metrics](docs/METRICS.md)
 - [Monetization](docs/MONETIZATION.md)
 - [Project template](docs/PROJECT_TEMPLATE.md)
+- [Idea bank](docs/idea-bank.md)
 
 ## Validate the dashboard
 
