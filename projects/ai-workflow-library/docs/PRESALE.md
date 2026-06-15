@@ -4,11 +4,11 @@
 
 - Project: `ai-workflow-library`
 - Validation type: `$5` willingness-to-pay test
-- Project status: `validating`
-- Build authorization: Not granted
-- Payment availability: Not confirmed
+- Project status: `building`
+- Build authorization: Approved for the minimum static page only
+- Payment availability: PayPal registered; review and final link approval pending
 
-This document defines a presale proposition and review material only. It does not authorize product development, publishing, deployment, payment collection, or outreach.
+This document authorizes implementation of the defined minimum static page. It does not authorize publishing, production deployment, payment collection, outreach, or spending.
 
 ## 1. 一句话定位
 
@@ -279,12 +279,13 @@ The free offer demonstrates that each template is useful. The paid pack provides
 当前满足情况：
 
 - 五个资产定义：已满足
-- PayPal 可用性：未满足
-- ChatGPT 最小页面批准：未满足
+- PayPal 注册：已确认，审核中
+- PayPal 真实链接可用性：未满足
+- ChatGPT 最小页面批准：已满足
 - 生产部署批准：未满足
 
-当前结论：`NO BUILD`
+当前结论：`MINIMUM PAGE BUILD APPROVED`
 
 ## 8. Approval state
 
-This presale pack is ready for Chairman and ChatGPT review. It is not approval to build, publish, deploy, contact users, or collect payment.
+The minimum static page is approved for local development. Real PayPal links, public publishing, production deployment, user contact, and payment collection remain subject to separate Chairman approval.

@@ -8,10 +8,10 @@
 - Technical owner: Codex
 - Strategic owner: ChatGPT
 - Approval authority: Chairman
-- Status: `validating`
+- Status: `building`
 - Created at: `2026-06-15T15:11:01Z`
 - Next review date: `2026-06-22`
-- Build authorization: Not granted
+- Build authorization: Granted for the minimum static presale page only
 
 ## 1. Customer and problem
 
@@ -53,7 +53,9 @@ Each released asset should state its intended user, prerequisites, expected outp
 
 Use a static-first site. Next.js is the preferred initial choice because the company already has tested operational knowledge for static export, but Astro remains acceptable if validation shows a meaningful simplicity advantage.
 
-No framework or product code may be created before build approval.
+Astro is selected for the approved minimum page because it produces static HTML by default with no required client-side JavaScript.
+
+The approval does not extend beyond the single presale page, five asset summaries, placeholder actions, and required engineering checks.
 
 ## 3. Acquisition hypothesis
 
@@ -82,6 +84,8 @@ Priority order:
 5. Google AdSense placeholder only after eligible traffic and site approval
 
 No payment API, Stripe, card checkout, subscription billing, cryptocurrency, complex merchant-of-record integration, or overseas company dependency is allowed in Phase 1.
+
+The Chairman has confirmed that a mainland China PayPal account is registered and awaiting review. A real support or purchase URL may not be added until the Chairman confirms that review is complete and the link is usable.
 
 ### Required Phase 1 monetization surfaces
 
@@ -129,7 +133,7 @@ Decision threshold:
 
 ## 7. Scope and non-goals
 
-### In scope after approval
+### Approved minimum-page scope
 
 - Static public library
 - Free Markdown downloads
@@ -138,6 +142,8 @@ Decision threshold:
 - Paid bundle placeholder without checkout implementation
 - Email subscription placeholder without a connected email platform
 - Privacy-safe measurement of visits, downloads, and monetization clicks
+- Five static asset summary pages or content records
+- Local development, build, static checks, and link tests
 
 ### Non-goals
 
@@ -152,6 +158,7 @@ Decision threshold:
 - Cryptocurrency payments
 - Large unvalidated content catalog
 - Overseas company or complex payment entity setup
+- Production deployment without a separate Chairman approval
 
 ## 8. Timebox and cost ceiling
 
@@ -260,7 +267,7 @@ Manual approval is required for:
 
 ## 15. What Codex is allowed to do autonomously
 
-While status is `validating`, Codex may:
+During the approved minimum-page build, Codex may:
 
 - Conduct read-only market, search, competitor, and distribution research
 - Organize evidence and maintain this project definition
@@ -269,9 +276,11 @@ While status is `validating`, Codex may:
 - Review risks, licensing, security, and operational constraints
 - Update the dashboard with factual approved status and metrics
 - Run repository validation and documentation checks
-- Prepare a build plan without creating product code
+- Implement the approved static page and five asset summaries
+- Add placeholder actions that display approval-pending status
+- Add local engineering checks, tests, and documentation
 
-After build approval, Codex may implement only the approved scope within the documented timebox and cost ceiling.
+Codex may implement only the approved scope within the documented timebox and cost ceiling.
 
 ## 16. What requires Chairman approval
 
@@ -291,3 +300,4 @@ After build approval, Codex may implement only the approved scope within the doc
 | Date | Decision | Evidence | Review date |
 | --- | --- | --- | --- |
 | 2026-06-15 | Register project as `validating`; build not authorized | Company mission, monetization policy, and initial project hypothesis | 2026-06-22 |
+| 2026-06-15 | Approve `building` for minimum static presale page only | Five asset definitions, presale specification, PayPal registration pending review, and ChatGPT approval | 2026-06-22 |

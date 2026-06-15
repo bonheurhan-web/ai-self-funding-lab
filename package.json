@@ -3,8 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "workspaces": [
+    "projects/ai-workflow-library"
+  ],
   "scripts": {
-    "validate:dashboard": "node scripts/validate-dashboard"
+    "validate:dashboard": "node scripts/validate-dashboard",
+    "dev": "npm run dev --workspace=ai-workflow-library",
+    "build": "npm run build --workspace=ai-workflow-library",
+    "test": "npm run test --workspace=ai-workflow-library"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

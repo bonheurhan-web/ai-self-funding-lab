@@ -1,0 +1,69 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { assets, type Asset } from "../../data/assets";
+
+export function getStaticPaths() {
+  return assets.map((asset) => ({
+    params: { slug: asset.slug },
+    props: { asset },
+  }));
+}
+
+type Props = {
+  asset: Asset;
+};
+
+const { asset } = Astro.props;
+---
+
+<BaseLayout
+  title={`${asset.title} | AI Workflow Library`}
+  description={`${asset.problem} Review the free scope, paid extension, format, and expected use.`}
+>
+  <article class="asset-detail">
+    <p class="eyebrow">{asset.id} · Asset summary</p>
+    <h1>{asset.title}</h1>
+    <p class="lede" lang="zh-CN">{asset.titleZh}</p>
+    <p class="lede">{asset.problem}</p>
+
+    <dl class="facts">
+      <div class="fact">
+        <dt>Who it is for</dt>
+        <dd>{asset.audience}</dd>
+      </div>
+      <div class="fact">
+        <dt>Problem solved</dt>
+        <dd>{asset.problem}</dd>
+      </div>
+      <div class="fact">
+        <dt>Free version</dt>
+        <dd>{asset.freeVersion}</dd>
+      </div>
+      <div class="fact">
+        <dt>Paid bundle adds</dt>
+        <dd>{asset.paidExtension}</dd>
+      </div>
+      <div class="fact">
+        <dt>File format</dt>
+        <dd>{asset.format}</dd>
+      </div>
+      <div class="fact">
+        <dt>Expected use</dt>
+        <dd>{asset.usage}</dd>
+      </div>
+    </dl>
+
+    <div class="notice">
+      <strong>Current delivery status</strong>
+      <p>
+        This is a product summary and download placeholder. Payment link pending approval. No
+        automatic file delivery is offered at this stage.
+      </p>
+    </div>
+
+    <div class="actions">
+      <a class="button secondary" href="/">← Back to the library</a>
+      <a class="button" href="/#starter-pack">Review the $5 pack</a>
+    </div>
+  </article>
+</BaseLayout>

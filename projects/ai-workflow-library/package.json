@@ -1,0 +1,17 @@
+{
+  "name": "ai-workflow-library",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "check": "astro check",
+    "build": "astro check && astro build",
+    "test": "astro build && node scripts/check-build.mjs"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "astro": "^6.4.7",
+    "typescript": "^6.0.3"
+  }
+}

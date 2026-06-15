@@ -42,3 +42,23 @@ Each material automation must document:
 - Success and failure signals
 - Retry policy
 - Manual recovery procedure
+
+## Codex capacity checkpoint
+
+If the Chairman reports that the remaining Codex allowance is at or below 5%, or Codex determines
+that the active task cannot be completed safely, Codex must stop new development immediately.
+
+Before waiting for a recovery instruction, Codex must create or update
+`reports/checkpoints/latest.md` with:
+
+- Current task
+- Completed work
+- Modified files
+- Current test results
+- Remaining work
+- Recommended next step
+- Current risks
+- Files to read first when work resumes
+
+Codex must then commit the current safe state. A checkpoint is not required while the reported
+allowance is above 5% and the active task can still be completed.

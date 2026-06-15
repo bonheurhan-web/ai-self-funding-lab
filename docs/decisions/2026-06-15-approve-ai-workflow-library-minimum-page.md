@@ -1,10 +1,10 @@
-# Proposed: Approve AI Workflow Library Minimum Presale Page
+# Approve AI Workflow Library Minimum Presale Page
 
 ## Status
 
-`proposed`
+`approved`
 
-This record is a draft. It does not approve build, publishing, deployment, payment collection, outreach, or spending.
+This decision approves only the local development of the minimum static presale page. It does not approve production deployment, payment collection, outreach, or spending.
 
 ## Context
 
@@ -18,10 +18,14 @@ The `ai-workflow-library` project has documented public problem evidence and now
 - A single static page can test messaging without a database, login, subscription, or payment API.
 - The page can preserve the company's static-first and zero-required-spend constraints.
 
+## Approval evidence
+
+- Chairman confirmed that a mainland China PayPal account has been registered and is awaiting review.
+- ChatGPT approved entry into the minimum-page development phase.
+
 ## What is still missing
 
-- Chairman confirmation that a PayPal support or payment link is operational and appropriate for the experiment
-- ChatGPT approval of the exact minimum build scope
+- Final Chairman confirmation that the PayPal account review is complete and the support or payment link is operational
 - Chairman approval for public publishing and production deployment
 - Evidence from at least five target-user reviews or equivalent behavioral validation
 - Final measurement events and reporting window
@@ -30,9 +34,11 @@ The `ai-workflow-library` project has documented public problem evidence and now
 
 ## Decision
 
-`proposed`
+`approved`
 
-Do not move the dashboard status from `validating` to `building` unless all approval conditions are recorded.
+Move the dashboard status from `validating` to `building` for the minimum static presale page only.
+
+This approval does not include a complex payment system. No payment API, checkout, subscription, database, login, or automated fulfillment is approved.
 
 ## If approved, Codex may
 
@@ -46,7 +52,7 @@ Do not move the dashboard status from `validating` to `building` unless all appr
 
 ## Codex may not
 
-- Add or expose a real PayPal, affiliate, AdSense, or email account without Chairman approval
+- Add or expose a real PayPal, affiliate, AdSense, or email account before final Chairman confirmation
 - Build a payment API, checkout, subscription, database, login, CMS, or administration system
 - Use Stripe, cryptocurrency, or a merchant-of-record integration
 - Publish community posts, send outreach, or contact users automatically
@@ -57,7 +63,7 @@ Do not move the dashboard status from `validating` to `building` unless all appr
 
 ## Chairman must confirm
 
-- Whether the PayPal support or digital-download payment link is available
+- Whether PayPal review has completed and the support or digital-download payment link is usable
 - Which link, if any, may be displayed and how account information will be protected
 - Whether a presale is allowed before all files are complete
 - Delivery timing, refund handling, and customer-support process
@@ -91,4 +97,6 @@ A tightly scoped page should produce clearer evidence about message comprehensio
 
 ## Outcome
 
-Pending. No approval has been granted.
+Approved on 2026-06-15 for local development of the minimum static page only.
+
+PayPal is registered and awaiting review. Real payment links remain prohibited until final Chairman confirmation. Production deployment requires a separate Chairman approval.
