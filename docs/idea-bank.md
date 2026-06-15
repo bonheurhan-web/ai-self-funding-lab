@@ -26,7 +26,7 @@ review questions they should answer.
 ## 2. Red Book Factory: Xiaohongshu AI content production and publishing assistant
 
 - Type: project idea
-- Status: `project_candidate`
+- Status: `proposed`
 
 ### Positioning
 
