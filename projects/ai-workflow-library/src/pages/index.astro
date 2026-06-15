@@ -9,74 +9,115 @@ const paymentPending = "Payment link pending approval.";
 ---
 
 <BaseLayout
-  title="AI Workflow Library | $5 starter templates for AI projects"
-  description="A minimal $5 template pack for copying a clear AI project structure with Codex, ChatGPT, and simple revenue tracking."
+  title="AI Workflow Library | Copy the AI self-funding workflow"
+  description="A $5 copy-paste workflow system for running small AI revenue experiments with Codex and ChatGPT."
 >
   <section class="hero">
-    <p class="eyebrow">AI Workflow Library · 图书馆</p>
-    <h1>Copy a simple AI project system for $5.</h1>
+    <p class="eyebrow">AI Workflow Library / 图书馆</p>
+    <h1>I built a system that tries to make AI earn money.</h1>
     <p class="lede">
-      Get five practical templates for briefing Codex, starting an AI project, tracking revenue, running daily work, and deciding when to stop.
+      This is the exact structure I use: Codex instructions, project templates, workflow checklists, and experiment tracking.
     </p>
     <p class="translation" lang="zh-CN">
-      图书馆是一组极简 AI 项目模板，帮助你快速复制项目结构、执行流程和复盘方式。
+      这是一个 AI 自养实验系统。你可以复制这套结构，用来启动、执行和复盘自己的 AI 项目。
     </p>
     <div class="actions">
-      <a class="button" href="#starter-pack">View the $5 pack</a>
-      <a class="button secondary" href="#assets">See the templates</a>
+      <a class="button" href="#starter-pack">Get the $5 system</a>
+      <a class="button secondary" href="#included">See what is included</a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid">
+      <article class="card">
+        <h3>Not theory</h3>
+        <p>A real structure used to run an AI revenue experiment.</p>
+      </article>
+      <article class="card">
+        <h3>Not ideas</h3>
+        <p>Copy-paste files, checklists, and instructions.</p>
+      </article>
+      <article class="card">
+        <h3>Real experiment system</h3>
+        <p>Built to track actions, costs, revenue, and stop decisions.</p>
+      </article>
     </div>
   </section>
 
   <section class="section" id="starter-pack">
     <div class="offer">
       <div>
-        <p class="eyebrow">Minimum paid offer</p>
-        <h2>AI Self-Funding Starter Pack</h2>
+        <p class="eyebrow">Low-friction offer</p>
+        <h2>One coffee ($5) = full AI workflow system</h2>
         <p>
-          Price: <strong>5 USD</strong>. You get five core templates that help you copy a clear AI project structure without a database, login system, or complex tooling.
-        </p>
-        <ul>
-          {assets.map((asset) => <li>{asset.title}</li>)}
-        </ul>
-        <p class="muted">
-          Current status: PayPal is under review. Payment is not available yet.
+          A copyable starter system for turning a vague AI project idea into a structured experiment.
+          It is designed to be used immediately, without a database, login, subscription, or long setup.
         </p>
         <p class="muted" lang="zh-CN">
-          当前状态：PayPal 正在审核，暂时不可支付。
+          一杯咖啡的价格，拿到一套可复制的 AI 项目工作流。当前 PayPal 正在审核，暂时不可支付。
         </p>
         <div class="actions">
           {
             buyUrl ? (
-              <a class="button" href={buyUrl} rel="nofollow">Buy with PayPal</a>
+              <a class="button" href={buyUrl} rel="nofollow">Support this experiment ($5)</a>
             ) : (
               <span class="button disabled" aria-disabled="true">{paymentPending}</span>
             )
           }
           {
             supportUrl ? (
-              <a class="button secondary" href={supportUrl} rel="nofollow">Support with PayPal</a>
+              <a class="button secondary" href={supportUrl} rel="nofollow">Support this experiment ($5)</a>
             ) : (
               <span class="button disabled" aria-disabled="true">{paymentPending}</span>
             )
           }
         </div>
+        <p class="muted">PayPal is under review. No real payment link is active yet.</p>
       </div>
       <div>
         <p class="price">$5</p>
-        <p class="muted">One-time template pack. No subscription.</p>
+        <p class="muted">One-time support. No subscription.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="included">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">Use immediately</p>
+        <h2>What you can copy and use.</h2>
+      </div>
+      <p>
+        The pack is built for low learning cost: open the files, copy the structure, and adapt it to your own AI project.
+      </p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>Copy-paste Codex instructions</h3>
+        <p>Tell Codex what to do, what not to do, and how to report completion.</p>
+      </article>
+      <article class="card">
+        <h3>AI project structure templates</h3>
+        <p>Start with a clear project brief, scope, approval rules, and review date.</p>
+      </article>
+      <article class="card">
+        <h3>Workflow checklist</h3>
+        <p>Run daily AI work without turning it into scattered conversations.</p>
+      </article>
+      <article class="card">
+        <h3>Experiment tracking system</h3>
+        <p>Track cost, revenue, status, and the decision to continue or stop.</p>
+      </article>
     </div>
   </section>
 
   <section class="section" id="assets">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">The five templates</p>
-        <h2>Short, usable, and focused.</h2>
+        <p class="eyebrow">Five core templates</p>
+        <h2>Everything stays short.</h2>
       </div>
-      <p>
-        Each template has one job: make an AI-assisted project easier to start, run, measure, or stop.
-      </p>
+      <p>Each asset has one purpose and one clear format.</p>
     </div>
     <div class="grid">
       {
@@ -86,24 +127,47 @@ const paymentPending = "Payment link pending approval.";
             <h3>{asset.title}</h3>
             <p>{asset.purpose}</p>
             <p class="muted">Format: {asset.format}</p>
-            <a href={`/assets/${asset.slug}/`}>View summary</a>
           </article>
         ))
       }
     </div>
   </section>
 
+  <section class="section">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">FAQ</p>
+        <h2>Before you support it.</h2>
+      </div>
+      <p class="muted">Short answers only.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <h3>Do I need programming skills?</h3>
+        <p>No. The templates are written for copy-paste use with Codex, ChatGPT, or similar AI tools.</p>
+      </article>
+      <article class="card">
+        <h3>Does it guarantee income?</h3>
+        <p>No. This is an experiment system. No income guarantee.</p>
+      </article>
+      <article class="card">
+        <h3>Can I use it immediately?</h3>
+        <p>Yes. The structure is meant to be copied, edited, and used immediately.</p>
+      </article>
+    </div>
+  </section>
+
   <section class="section" id="free-downloads">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Free preview</p>
-        <h2>Free downloads are placeholders.</h2>
+        <p class="eyebrow">Preview status</p>
+        <h2>Downloads and payment are placeholders.</h2>
       </div>
       <p>
-        Preview files will be added only after manual review. No automatic delivery is active.
+        PayPal is still under review. Preview files will be added only after manual review.
       </p>
     </div>
-    <span class="button disabled" aria-disabled="true">Free preview pending review</span>
+    <span class="button disabled" aria-disabled="true">Payment link pending approval.</span>
   </section>
 
   <section class="section">
@@ -123,7 +187,7 @@ const paymentPending = "Payment link pending approval.";
       <article class="card">
         <p class="eyebrow">Risk statement</p>
         <h3>No income guarantee</h3>
-        <p>This is an experimental system. It does not guarantee income.</p>
+        <p>This is an experiment system. No income guarantee.</p>
         <p lang="zh-CN">这是一个实验系统，不保证产生收入。</p>
       </article>
     </div>
