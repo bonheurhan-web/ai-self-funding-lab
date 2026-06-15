@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Micro Dev Tools
 
-## Getting Started
+Fast, private developer utilities built with Next.js, TypeScript, and Tailwind CSS. The site statically exports 10 SEO-ready tool pages for Cloudflare Pages.
 
-First, run the development server:
+## Included tools
+
+- UUID v4 Generator
+- ULID Generator
+- Base64 Encoder and Decoder
+- URL Encoder and Decoder
+- JSON Formatter and Validator
+- Unix Timestamp Converter
+- SHA256 Hash Generator
+
+Every tool page includes a title, meta description, canonical URL, H1, instructions, three examples, three FAQs, related tools, and `SoftwareApplication` JSON-LD.
+
+## Local development
+
+Requirements: Node.js 24+ and npm.
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Verification
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm test
+npm run build
+npx playwright install chromium
+npm run test:e2e
+```
 
-## Learn More
+`npm run build` creates the static site in `out/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Site URL
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The default canonical origin is `https://devtoolkit.cc`. Set `NEXT_PUBLIC_SITE_URL` to the final HTTPS origin before building if a different domain is registered:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+NEXT_PUBLIC_SITE_URL=https://example.com npm run build
+```
 
-## Deploy on Vercel
+## Deploy to Cloudflare Pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repository to GitHub.
+2. In Cloudflare, open **Workers & Pages** and select **Create application**.
+3. Choose **Pages**, then **Import an existing Git repository**.
+4. Select this repository and use:
+   - Framework preset: `Next.js (Static HTML Export)`
+   - Production branch: `main`
+   - Build command: `npx next build`
+   - Build output directory: `out`
+5. Add `NEXT_PUBLIC_SITE_URL` as a production environment variable with the final domain.
+6. Deploy. Cloudflare will provide a temporary `*.pages.dev` URL.
+7. In the Pages project, open **Custom domains**, add the registered domain, and follow the DNS instructions.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Cloudflare rebuilds production after pushes to `main` and creates preview deployments for pull requests.
+
+## Continuous integration
+
+GitHub Actions runs lint, unit tests, and the production build on pushes to `main` and on pull requests.
