@@ -4,66 +4,45 @@ import { assets } from "../data/assets";
 
 const supportUrl = import.meta.env.PAYPAL_SUPPORT_URL?.trim();
 const buyUrl = import.meta.env.PAYPAL_BUY_URL?.trim();
-const affiliateDisclosure = import.meta.env.AFFILIATE_DISCLOSURE?.trim();
+const affiliateLink = import.meta.env.AFFILIATE_LINK?.trim();
 const paymentPending = "Payment link pending approval.";
 ---
 
 <BaseLayout
-  title="AI Workflow Library | Reusable systems for AI-assisted work"
-  description="Practical templates and operating systems for running measurable projects with ChatGPT, Codex, and other AI tools."
+  title="AI Workflow Library | $5 starter templates for AI projects"
+  description="A minimal $5 template pack for copying a clear AI project structure with Codex, ChatGPT, and simple revenue tracking."
 >
   <section class="hero">
-    <p class="eyebrow">An open revenue experiment · 一个公开的收入实验</p>
-    <h1>Make AI work like a system.</h1>
+    <p class="eyebrow">AI Workflow Library · 图书馆</p>
+    <h1>Copy a simple AI project system for $5.</h1>
     <p class="lede">
-      The AI Workflow Library turns a real experiment in directing ChatGPT and Codex like project
-      operators into reusable templates, checklists, and operating systems.
+      Get five practical templates for briefing Codex, starting an AI project, tracking revenue, running daily work, and deciding when to stop.
     </p>
     <p class="translation" lang="zh-CN">
-      图书馆把“如何指挥 ChatGPT + Codex 像员工一样做项目赚钱”的真实实验过程，整理成模板、清单和操作系统。
+      图书馆是一组极简 AI 项目模板，帮助你快速复制项目结构、执行流程和复盘方式。
     </p>
     <div class="actions">
-      <a class="button" href="#starter-pack">See the $5 starter pack</a>
-      <a class="button secondary" href="#free-downloads">Explore free resources</a>
-    </div>
-  </section>
-
-  <section class="section" id="assets">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow">Launch collection</p>
-        <h2>Five assets for running focused AI experiments.</h2>
-      </div>
-      <p class="translation" lang="zh-CN">
-        首发内容覆盖项目指挥、启动、指标、日常执行和停止条件。当前提供摘要，完整交付将在付款与审核流程确认后决定。
-      </p>
-    </div>
-    <div class="grid">
-      {
-        assets.map((asset, index) => (
-          <article class:list={["card", { featured: index === 0 }]}>
-            <p class="id">{asset.id}</p>
-            <h3>{asset.title}</h3>
-            <p lang="zh-CN">{asset.titleZh}</p>
-            <p>{asset.problem}</p>
-            <a href={`/assets/${asset.slug}/`}>View asset summary →</a>
-          </article>
-        ))
-      }
+      <a class="button" href="#starter-pack">View the $5 pack</a>
+      <a class="button secondary" href="#assets">See the templates</a>
     </div>
   </section>
 
   <section class="section" id="starter-pack">
     <div class="offer">
       <div>
-        <p class="eyebrow">Proposed paid bundle</p>
+        <p class="eyebrow">Minimum paid offer</p>
         <h2>AI Self-Funding Starter Pack</h2>
         <p>
-          Five complete templates, a usage guide, a 7-day experiment plan, a project review sheet,
-          and a practical Codex command collection.
+          Price: <strong>5 USD</strong>. You get five core templates that help you copy a clear AI project structure without a database, login system, or complex tooling.
+        </p>
+        <ul>
+          {assets.map((asset) => <li>{asset.title}</li>)}
+        </ul>
+        <p class="muted">
+          Current status: PayPal is under review. Payment is not available yet.
         </p>
         <p class="muted" lang="zh-CN">
-          计划包含 5 个完整模板、使用说明、7 天实验计划、项目复盘表和 Codex 指令合集。
+          当前状态：PayPal 正在审核，暂时不可支付。
         </p>
         <div class="actions">
           {
@@ -73,63 +52,80 @@ const paymentPending = "Payment link pending approval.";
               <span class="button disabled" aria-disabled="true">{paymentPending}</span>
             )
           }
+          {
+            supportUrl ? (
+              <a class="button secondary" href={supportUrl} rel="nofollow">Support with PayPal</a>
+            ) : (
+              <span class="button disabled" aria-disabled="true">{paymentPending}</span>
+            )
+          }
         </div>
-        <p class="muted">
-          No automatic delivery is promised. The final payment and delivery flow will be confirmed
-          after PayPal review.
-        </p>
       </div>
       <div>
         <p class="price">$5</p>
-        <p class="muted">One-time proposed price. No subscription.</p>
+        <p class="muted">One-time template pack. No subscription.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="assets">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">The five templates</p>
+        <h2>Short, usable, and focused.</h2>
+      </div>
+      <p>
+        Each template has one job: make an AI-assisted project easier to start, run, measure, or stop.
+      </p>
+    </div>
+    <div class="grid">
+      {
+        assets.map((asset) => (
+          <article class="card">
+            <p class="id">{asset.id}</p>
+            <h3>{asset.title}</h3>
+            <p>{asset.purpose}</p>
+            <p class="muted">Format: {asset.format}</p>
+            <a href={`/assets/${asset.slug}/`}>View summary</a>
+          </article>
+        ))
+      }
     </div>
   </section>
 
   <section class="section" id="free-downloads">
     <div class="section-heading">
       <div>
-        <p class="eyebrow">Free downloads</p>
-        <h2>Start with the public versions.</h2>
+        <p class="eyebrow">Free preview</p>
+        <h2>Free downloads are placeholders.</h2>
       </div>
       <p>
-        Download files are being prepared. This area will remain a placeholder until the content and
-        delivery method pass review.
+        Preview files will be added only after manual review. No automatic delivery is active.
       </p>
     </div>
-    <span class="button disabled" aria-disabled="true">Free downloads coming soon</span>
+    <span class="button disabled" aria-disabled="true">Free preview pending review</span>
   </section>
 
   <section class="section">
     <div class="grid">
       <article class="card">
-        <p class="eyebrow">Support the experiment</p>
-        <h3>PayPal support</h3>
-        <p>Optional support helps fund further testing and documentation.</p>
+        <p class="eyebrow">Affiliate placeholder</p>
+        <h3>Recommended tools</h3>
+        <p>No affiliate recommendation is active yet.</p>
         {
-          supportUrl ? (
-            <a class="button" href={supportUrl} rel="nofollow">Support with PayPal</a>
+          affiliateLink ? (
+            <a class="button secondary" href={affiliateLink} rel="nofollow">View tool</a>
           ) : (
-            <span class="button disabled" aria-disabled="true">{paymentPending}</span>
+            <span class="button disabled" aria-disabled="true">Affiliate link pending review</span>
           )
         }
       </article>
       <article class="card">
-        <p class="eyebrow">Affiliate disclosure</p>
-        <h3>Recommended tools</h3>
-        <p>
-          {affiliateDisclosure || "Affiliate recommendations are not active. Any future affiliate relationship will be disclosed clearly."}
-        </p>
-        <span class="button disabled" aria-disabled="true">Affiliate links pending review</span>
+        <p class="eyebrow">Risk statement</p>
+        <h3>No income guarantee</h3>
+        <p>This is an experimental system. It does not guarantee income.</p>
+        <p lang="zh-CN">这是一个实验系统，不保证产生收入。</p>
       </article>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="notice">
-      <strong>Risk statement</strong>
-      <p>This is an experiment system. It does not guarantee income.</p>
-      <p lang="zh-CN">这是一个实验系统，不保证产生收入。</p>
     </div>
   </section>
 </BaseLayout>

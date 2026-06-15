@@ -28,7 +28,8 @@ const homepage = await readFile(path.join(distRoot, "index.html"), "utf8");
 const requiredText = [
   "AI Self-Funding Starter Pack",
   "Payment link pending approval.",
-  "This is an experiment system. It does not guarantee income.",
+  "This is an experimental system. It does not guarantee income.",
+  "Price: <strong>5 USD</strong>",
 ];
 
 for (const text of requiredText) {
