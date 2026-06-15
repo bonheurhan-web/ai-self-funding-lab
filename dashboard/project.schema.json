@@ -1,24 +1,11 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://ai-self-funding-lab.local/dashboard/project.schema.json",
-  "title": "AI Self-Funding Lab portfolio dashboard",
-  "type": "object",
-  "additionalProperties": false,
-  "required": ["schema_version", "updated_at", "projects"],
-  "properties": {
-    "schema_version": {
-      "const": "1.0.0"
-    },
-    "updated_at": {
-      "type": ["string", "null"],
-      "format": "date-time"
-    },
-    "projects": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/project"
-      }
-    }
+  "title": "AI Self-Funding Lab Portfolio Projects",
+  "description": "The canonical list of project metric snapshots.",
+  "type": "array",
+  "items": {
+    "$ref": "#/$defs/project"
   },
   "$defs": {
     "project": {
@@ -34,14 +21,17 @@
         "revenue",
         "cost",
         "profit",
-        "roi"
+        "roi",
+        "data_window"
       ],
       "properties": {
         "project_name": {
           "type": "string",
-          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$",
+          "description": "Unique, stable kebab-case project slug."
         },
         "status": {
+          "type": "string",
           "enum": [
             "proposed",
             "validating",
@@ -84,15 +74,32 @@
         },
         "roi": {
           "type": ["number", "null"]
+        },
+        "data_window": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/dataWindow"
+            },
+            {
+              "type": "null"
+            }
+          ]
         }
       }
     },
     "deployment": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["environment", "url", "revision", "status", "deployed_at"],
+      "required": [
+        "environment",
+        "url",
+        "revision",
+        "status",
+        "deployed_at"
+      ],
       "properties": {
         "environment": {
+          "type": "string",
           "enum": ["preview", "production"]
         },
         "url": {
@@ -104,11 +111,31 @@
           "minLength": 7
         },
         "status": {
+          "type": "string",
           "enum": ["success", "failed", "rolled_back"]
         },
         "deployed_at": {
           "type": "string",
           "format": "date-time"
+        }
+      }
+    },
+    "dataWindow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end", "timezone"],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "timezone": {
+          "type": "string",
+          "minLength": 1
         }
       }
     }

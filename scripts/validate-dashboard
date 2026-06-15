@@ -1,0 +1,97 @@
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import process from "node:process";
+import { pathToFileURL } from "node:url";
+import Ajv2020 from "ajv/dist/2020.js";
+import addFormats from "ajv-formats";
+
+const schemaUrl = new URL("../dashboard/project.schema.json", import.meta.url);
+const projectsUrl = process.argv[2]
+  ? pathToFileURL(resolve(process.argv[2]))
+  : new URL("../dashboard/projects.json", import.meta.url);
+
+try {
+  const [schema, projects] = await Promise.all([
+    readJson(schemaUrl),
+    readJson(projectsUrl),
+  ]);
+
+  const ajv = new Ajv2020({ allErrors: true, strict: true });
+  addFormats(ajv);
+
+  const validate = ajv.compile(schema);
+  if (!validate(projects)) {
+    for (const error of validate.errors ?? []) {
+      console.error(`${error.instancePath || "/"} ${error.message}`);
+    }
+    process.exitCode = 1;
+  } else {
+    validateProjectSemantics(projects);
+    console.log(`Dashboard valid: ${projects.length} project(s).`);
+  }
+} catch (error) {
+  console.error(error instanceof Error ? error.message : String(error));
+  process.exitCode = 1;
+}
+
+async function readJson(url) {
+  try {
+    return JSON.parse(await readFile(url, "utf8"));
+  } catch (error) {
+    throw new Error(`Cannot parse ${url.pathname}: ${error.message}`);
+  }
+}
+
+function validateProjectSemantics(projects) {
+  const names = new Set();
+
+  for (const project of projects) {
+    if (names.has(project.project_name)) {
+      throw new Error(`Duplicate project_name: ${project.project_name}`);
+    }
+    names.add(project.project_name);
+
+    if (
+      project.data_window &&
+      new Date(project.data_window.start) > new Date(project.data_window.end)
+    ) {
+      throw new Error(
+        `Invalid data_window for ${project.project_name}: start is after end.`,
+      );
+    }
+
+    const financialInputsMissing =
+      project.revenue === null || project.cost === null;
+    if (financialInputsMissing) {
+      if (project.profit !== null || project.roi !== null) {
+        throw new Error(
+          `Invalid financials for ${project.project_name}: profit and roi must be null when revenue or cost is null.`,
+        );
+      }
+      continue;
+    }
+
+    const expectedProfit = roundToTwoDecimals(
+      project.revenue - project.cost,
+    );
+    if (project.profit !== expectedProfit) {
+      throw new Error(
+        `Invalid profit for ${project.project_name}: expected ${expectedProfit}.`,
+      );
+    }
+
+    const expectedRoi =
+      project.cost === 0
+        ? null
+        : roundToTwoDecimals((project.profit / project.cost) * 100);
+    if (project.roi !== expectedRoi) {
+      throw new Error(
+        `Invalid roi for ${project.project_name}: expected ${expectedRoi}.`,
+      );
+    }
+  }
+}
+
+function roundToTwoDecimals(value) {
+  return Number(value.toFixed(2));
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ai-self-funding-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate:dashboard": "node scripts/validate-dashboard"
+  },
+  "devDependencies": {
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1"
+  }
+}

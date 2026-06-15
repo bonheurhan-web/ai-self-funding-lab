@@ -16,11 +16,12 @@ The canonical portfolio dataset is `dashboard/projects.json`, validated by `dash
 | `cost` | Direct attributable cost in USD during the reporting period |
 | `profit` | `revenue - cost` |
 | `roi` | `(profit / cost) x 100`; `null` when cost is zero |
+| `data_window` | Inclusive start, exclusive end, and timezone for windowed metrics |
 
 ## Reporting rules
 
 - Monetary values use USD and two decimal places.
-- Visitor and indexing windows must be stated in the report.
+- The dashboard `data_window` must state the visitor and financial reporting window.
 - Revenue and cost use the same reporting period.
 - Refunds reduce revenue; taxes collected for authorities are excluded.
 - Shared costs are allocated using a documented rule or reported separately as company overhead.
