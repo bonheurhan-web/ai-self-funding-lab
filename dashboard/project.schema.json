@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-self-funding-lab.local/dashboard/project.schema.json",
+  "title": "AI Self-Funding Lab portfolio dashboard",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "updated_at", "projects"],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "updated_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/project"
+      }
+    }
+  },
+  "$defs": {
+    "project": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "project_name",
+        "status",
+        "created_at",
+        "deployments",
+        "indexed_pages",
+        "visitors",
+        "revenue",
+        "cost",
+        "profit",
+        "roi"
+      ],
+      "properties": {
+        "project_name": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "validating",
+            "building",
+            "launched",
+            "measuring",
+            "scaling",
+            "paused",
+            "killed"
+          ]
+        },
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deployments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/deployment"
+          }
+        },
+        "indexed_pages": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "visitors": {
+          "type": ["integer", "null"],
+          "minimum": 0
+        },
+        "revenue": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "cost": {
+          "type": ["number", "null"],
+          "minimum": 0
+        },
+        "profit": {
+          "type": ["number", "null"]
+        },
+        "roi": {
+          "type": ["number", "null"]
+        }
+      }
+    },
+    "deployment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["environment", "url", "revision", "status", "deployed_at"],
+      "properties": {
+        "environment": {
+          "enum": ["preview", "production"]
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "revision": {
+          "type": "string",
+          "minLength": 7
+        },
+        "status": {
+          "enum": ["success", "failed", "rolled_back"]
+        },
+        "deployed_at": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    }
+  }
+}

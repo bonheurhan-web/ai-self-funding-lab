@@ -1,15 +1,19 @@
 # AI Self-Funding Lab
 
-An execution lab for building small AI-assisted products that can fund their own continued development.
+An AI-operated company building a portfolio of small internet businesses that fund their own continued development.
+
+## Company target
+
+`Portfolio Monthly Revenue >= ChatGPT Pro monthly price x 5`
 
 ## Repository structure
 
-- `docs/` - strategy, operating notes, and technical decisions
+- `docs/` - company strategy, governance, engineering, and operating standards
 - `projects/` - independently deployable products
-- `shared/` - reusable assets and code shared across projects
-- `dashboard/` - portfolio and operating dashboard
+- `shared/` - reusable capabilities with stable ownership boundaries
+- `dashboard/` - canonical portfolio operating data and schema
 - `reports/` - periodic progress and performance reports
-- `metrics/` - metric definitions, snapshots, and source data
+- `metrics/` - raw metric snapshots and source exports
 
 ## Active projects
 
@@ -21,4 +25,12 @@ An execution lab for building small AI-assisted products that can fund their own
 - Codex: CTO, full-stack engineering, testing, and DevOps
 - Chairman: executes ChatGPT directives and approves deployments or external spending
 
-See [MISSION.md](MISSION.md) for the lab's mandate and operating principles.
+## Company handbook
+
+- [Mission](docs/MISSION.md)
+- [Vision](docs/VISION.md)
+- [Engineering](docs/ENGINEERING.md)
+- [Automation](docs/AUTOMATION.md)
+- [Decision system](docs/DECISION.md)
+- [Metrics](docs/METRICS.md)
+- [Project template](docs/PROJECT_TEMPLATE.md)

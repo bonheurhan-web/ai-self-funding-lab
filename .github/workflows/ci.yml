@@ -1,4 +1,4 @@
-name: CI
+name: Portfolio CI
 
 on:
   push:
@@ -6,7 +6,28 @@ on:
   pull_request:
 
 jobs:
-  verify:
+  company-infrastructure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node dashboard/validate.mjs
+      - name: Verify company structure
+        shell: bash
+        run: |
+          test -f docs/MISSION.md
+          test -f docs/VISION.md
+          test -f docs/ENGINEERING.md
+          test -f docs/AUTOMATION.md
+          test -f docs/DECISION.md
+          test -f docs/METRICS.md
+          test -f docs/PROJECT_TEMPLATE.md
+          test -f dashboard/project.schema.json
+          test -f projects/_template/PROJECT.md
+
+  micro-dev-tools:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
