@@ -208,10 +208,15 @@ Record validation evidence without changing hypotheses into claims.
 
 | Date | Evidence type | Source or observation | Problem/asset | Strength | Decision impact |
 | --- | --- | --- | --- | --- | --- |
-| Not collected | - | Validation pack created; no market evidence recorded yet | - | None | Build gate not met |
+| 2026-06-15 | Codex community workflow | https://www.reddit.com/r/codex/comments/1tf4s07/my_best_workflow_so_far_for_building_projects/ documents reusable handoffs, bounded tasks, verification, and known-issue tracking | P1, P2, P10 / A1, A6 | Strong | Supports structured operating assets |
+| 2026-06-15 | Codex community workflow | https://www.reddit.com/r/codex/comments/1s4ufl3/my_workflow_for_building_an_app_with_codex/ documents trial-and-error movement to controlled batches and review loops | P1, P10 / A1, A6 | Strong | Supports workflow templates; no payment signal |
+| 2026-06-15 | Cross-tool configuration | https://www.reddit.com/r/codex/comments/1tcu1pb/sharing_my_codex_workflow_for_personal_projects/ describes maintaining specs, agent definitions, and duplicated Codex/Claude config | P2, P6, P10 / A1 | Strong | Supports portable operating-system assets |
+| 2026-06-15 | Cursor community | https://forum.cursor.com/t/created-a-collection-of-879-mdc-cursor-rules-files-for-you-all/51634 reports `.mdc` confusion and requests task-specific rules | P7 / A4 | Strong | Supports Cursor rules demand; strong free competition |
+| 2026-06-15 | Solo-founder quality interviews | https://news.ycombinator.com/item?id=48453002 reports review and cleanup burden for AI-generated code, with acknowledged selection effects | P10, P12 / A1, A6 | Medium | Supports quality gates; vendor-reported |
+| 2026-06-15 | Full evidence review | [`EVIDENCE.md`](EVIDENCE.md) records keywords, eight demand examples, competitors, asset recommendations, and missing gates | P1-P12 / A1-A9 | Mixed | Build gate remains incomplete |
 
 ## Current decision
 
 `NO BUILD`
 
-Reason: the Validation Pack defines the research and gate, but no external demand evidence, approved PayPal availability, or ChatGPT build approval has been recorded.
+Reason: external problem evidence now exists, but willingness to pay, behavioral validation, keyword metrics, five complete asset definitions, approved measurement, confirmed PayPal availability, Chairman approval, and ChatGPT build approval remain missing.
