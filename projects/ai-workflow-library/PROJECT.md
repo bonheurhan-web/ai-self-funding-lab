@@ -71,6 +71,8 @@ The hypothesis is that narrowly named, immediately reusable assets will outperfo
 
 Phase 1 follows `docs/MONETIZATION.md`.
 
+This project is a revenue experiment, not an unmonetized content site. Free assets exist to test acquisition, usefulness, and conversion into an approved revenue surface.
+
 Priority order:
 
 1. Free web library and free Markdown downloads to establish demand
@@ -80,6 +82,16 @@ Priority order:
 5. Google AdSense placeholder only after eligible traffic and site approval
 
 No payment API, Stripe, card checkout, subscription billing, cryptocurrency, complex merchant-of-record integration, or overseas company dependency is allowed in Phase 1.
+
+### Required Phase 1 monetization surfaces
+
+The approved build specification must reserve all three surfaces:
+
+- PayPal support link placeholder with no real account URL until Chairman approval
+- Paid bundle section describing the proposed paid value, with no checkout implementation
+- Affiliate placeholder limited to relevant programs that support PayPal or bank payout, with no enrollment or links until Chairman approval
+
+These surfaces are mandatory experiment instrumentation, but placeholders do not authorize account actions, publishing, or payment integration.
 
 ## 5. Primary success metric
 
@@ -101,6 +113,7 @@ Leading indicators such as qualified visits, downloads, support-link clicks, and
 
 Before build authorization, collect and review:
 
+- Completion of the build gate in [`docs/VALIDATION.md`](docs/VALIDATION.md)
 - Search and competitor evidence that users actively seek at least three proposed asset types
 - At least five concrete examples of users asking for reusable workflows, templates, rules, or checklists
 - A ranked first-release set of no more than three assets
