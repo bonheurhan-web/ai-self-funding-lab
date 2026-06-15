@@ -14,7 +14,12 @@ jobs:
         with:
           node-version: 24
           cache: npm
+          cache-dependency-path: projects/micro-dev-tools/package-lock.json
       - run: npm ci
+        working-directory: projects/micro-dev-tools
       - run: npm run lint
+        working-directory: projects/micro-dev-tools
       - run: npm test
+        working-directory: projects/micro-dev-tools
       - run: npm run build
+        working-directory: projects/micro-dev-tools
