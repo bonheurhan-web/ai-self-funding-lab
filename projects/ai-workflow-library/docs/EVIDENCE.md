@@ -170,3 +170,19 @@ The path is explicit but not operational because PayPal link availability is unc
 - ChatGPT has not approved build phase
 
 Project status must remain `validating`.
+
+## 7. Presale validation status
+
+- Presale proposition: documented in [`PRESALE.md`](PRESALE.md)
+- Proposed price: `$5 USD`
+- Five complete asset definitions: complete at specification level
+- Concrete paid file list: complete
+- Minimum page copy: complete
+- Target-user review: not performed
+- Public presale page: not created
+- PayPal support or payment link: not confirmed by Chairman
+- Payment collection: not authorized
+- ChatGPT minimum-page approval: not recorded
+- Production deployment: not authorized
+
+Current status remains `validating`. The project is preparing a presale validation test, not entering product development. Documentation completion is not evidence of willingness to pay.
