@@ -37,6 +37,7 @@ An AI-operated company building a portfolio of small internet businesses that fu
 - [Automation](docs/AUTOMATION.md)
 - [Decision system](docs/DECISION.md)
 - [Metrics](docs/METRICS.md)
+- [Monetization](docs/MONETIZATION.md)
 - [Project template](docs/PROJECT_TEMPLATE.md)
 
 ## Validate the dashboard

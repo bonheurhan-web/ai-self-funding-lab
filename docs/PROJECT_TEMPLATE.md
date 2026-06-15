@@ -10,6 +10,9 @@ Before development, complete `PROJECT.md` with:
 - Proposed solution
 - Acquisition hypothesis
 - Monetization hypothesis
+- Phase 1 monetization method permitted by [`MONETIZATION.md`](MONETIZATION.md)
+- Demand evidence required before monetization implementation
+- Revenue verification source
 - Primary success metric
 - Validation evidence
 - Scope and non-goals
@@ -30,6 +33,13 @@ projects/<project-name>/
 ```
 
 Framework-specific files may be added, but these ownership boundaries remain.
+
+## Monetization gate
+
+- No payment API may be built before evidence of demand.
+- Static PayPal links are the default direct-payment method in Phase 1.
+- Stripe, card checkout, subscriptions, merchant-of-record systems, cryptocurrency, and payment systems requiring overseas company setup require explicit Chairman approval.
+- The first monetization milestone is verified revenue in PayPal, Google AdSense, or an approved affiliate dashboard, not bank withdrawal.
 
 ## Required operating capabilities
 
@@ -52,3 +62,4 @@ Framework-specific files may be added, but these ownership boundaries remain.
 5. Security and secret handling are reviewed.
 6. Dashboard record is added.
 7. Production deployment receives Chairman approval.
+8. Monetization method complies with `docs/MONETIZATION.md`.

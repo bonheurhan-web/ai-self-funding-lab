@@ -22,3 +22,4 @@ The target uses the current public monthly price of ChatGPT Pro at the time of e
 4. Shared infrastructure must reduce repeated work without coupling projects.
 5. Costs, failures, and stopped projects must be reported honestly.
 6. Decisions must be recorded with evidence and a review date.
+7. Monetization must follow [`MONETIZATION.md`](MONETIZATION.md): validate demand before building payment infrastructure and prefer approved low-friction Phase 1 methods.

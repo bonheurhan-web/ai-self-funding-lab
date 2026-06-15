@@ -8,6 +8,7 @@ These documents are the operating system for AI Self-Funding Lab:
 - `AUTOMATION.md` - automation policy and maturity model
 - `DECISION.md` - project selection and continuation rules
 - `METRICS.md` - canonical portfolio metric definitions
+- `MONETIZATION.md` - approved revenue methods and payment constraints
 - `PROJECT_TEMPLATE.md` - requirements for every new project
 
 Changes to these documents are company policy changes and require a dedicated commit.
