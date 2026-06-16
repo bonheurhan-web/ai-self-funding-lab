@@ -10,7 +10,8 @@
     "validate:dashboard": "node scripts/validate-dashboard",
     "dev": "npm run dev --workspace=ai-workflow-library",
     "build": "npm run build --workspace=ai-workflow-library",
-    "test": "npm run test --workspace=ai-workflow-library"
+    "test": "npm run test --workspace=ai-workflow-library",
+    "check:ai-workflow-library": "npm run test --workspace=ai-workflow-library"
   },
   "devDependencies": {
     "ajv": "^8.17.1",

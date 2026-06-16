@@ -10,8 +10,9 @@ An AI-operated company building a portfolio of small internet businesses that fu
 
 - Company governance documents: established
 - Portfolio Dashboard schema and validation: established
-- Dashboard projects: empty; no project has been registered
-- Product development: not authorized in this phase
+- `ai-workflow-library`: preview operations phase
+- PayPal: placeholder only; no real payment link is active
+- Production launch: not authorized yet
 
 ## Repository structure
 
@@ -50,6 +51,25 @@ npm run validate:dashboard
 
 The command validates `dashboard/projects.json` against its JSON Schema and checks financial formulas. Invalid data returns a non-zero exit code.
 
+## Operations
+
+`ai-workflow-library` is now in preview operations. Codex must follow
+[`OPERATIONS.md`](projects/ai-workflow-library/docs/OPERATIONS.md) for daily checks.
+
+- Daily report time: 22:30 Beijing time
+- Daily reports: `reports/daily/`
+- Incident reports: `reports/incidents/`
+- Incidents must be reported immediately
+- Chairman approves only key actions: production deployment, real payment links, public promotion,
+  price changes, and new systems
+
+Project check command:
+
+```bash
+npm run check:ai-workflow-library
+```
+
 ## Next step
 
-Create and approve the first project [`PROJECT.md`](projects/_template/PROJECT.md) using the company template. Do not begin product development until its customer, acquisition, monetization, success metric, cost ceiling, timebox, and kill criteria are reviewed.
+Observe the `ai-workflow-library` preview version and record daily operational status. Do not add
+new systems or move to production without Chairman approval.

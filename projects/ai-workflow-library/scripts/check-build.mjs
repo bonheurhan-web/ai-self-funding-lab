@@ -49,4 +49,15 @@ if (/https?:\/\/[^"' ]*paypal\./i.test(homepage)) {
   throw new Error("Built page contains a real PayPal URL.");
 }
 
+const bannedText = [
+  { pattern: /stripe/i, label: "Stripe" },
+  { pattern: /guaranteed income/i, label: "guaranteed income" },
+];
+
+for (const banned of bannedText) {
+  if (banned.pattern.test(homepage)) {
+    throw new Error(`Homepage contains banned text: ${banned.label}`);
+  }
+}
+
 console.log(`Build check passed: ${expectedPages.length} pages and ${new Set(internalLinks).size} internal links verified.`);
