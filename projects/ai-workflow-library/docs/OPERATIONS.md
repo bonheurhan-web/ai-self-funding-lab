@@ -15,11 +15,12 @@ Check these items every day:
 - Build and test status are passing
 - `dashboard/projects.json` status is correct
 - New data that should be recorded
+- Cloudflare Web Analytics status and visit data, if available
 - Risks or unusual behavior
 
 ## Daily report schedule
 
-Daily reports are produced at 22:30 Beijing time.
+Daily reports are produced at 18:30 Beijing time.
 
 Report path:
 

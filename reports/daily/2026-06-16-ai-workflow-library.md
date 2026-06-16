@@ -1,7 +1,7 @@
 # AI Workflow Library Daily Report
 
 - Date: 2026-06-16
-- Report time: 22:30 Beijing time
+- Report time: 18:30 Beijing time
 - Project: `ai-workflow-library`
 - Preview URL: https://9c5dc92b.ai-workflow-library.pages.dev/
 
@@ -40,11 +40,13 @@ PayPal remains a placeholder. No real PayPal link is active.
 
 ## Data status
 
-No external analytics or payment data source is connected. No data yet.
+Cloudflare Web Analytics has been connected to the preview deployment. No interpreted user behavior
+data has been recorded in the project dashboard yet.
 
 ## Visit data
 
-No data yet.
+Cloudflare account-level analytics showed traffic-like activity, but it is not yet treated as
+validated user behavior for this project.
 
 ## PayPal click data
 

@@ -3,11 +3,11 @@
 - Project: `ai-workflow-library`
 - Deployment type: preview deployment
 - Status: deployed
-- Build version hash: `e63f02f40cc1e030fffb4c826b88e6a164dfb5bd`
+- Deployment hash: `b44da720`
 
 ## Deployment URL
 
-https://9c5dc92b.ai-workflow-library.pages.dev/
+https://b44da720.ai-workflow-library.pages.dev/
 
 Alias URL:
 
@@ -27,6 +27,8 @@ Checked URLs:
 - `/assets/ai-project-kill-criteria-review-template/`
 
 All checked URLs returned HTTP 200.
+
+Cloudflare Web Analytics script is present on all checked pages.
 
 ## Broken links
 

@@ -40,3 +40,6 @@ copy, and the absence of a real PayPal URL.
 
 Copy `.env.example` to a local `.env` only when testing approved values. Keep all example values
 empty. Never commit real account details or URLs without explicit approval.
+
+`CLOUDFLARE_WEB_ANALYTICS_TOKEN` enables Cloudflare Web Analytics when set in the deployment
+environment. Keep it empty for local builds unless testing analytics explicitly.
